@@ -1,0 +1,15 @@
+[
+  {
+    "id": 101,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": { "url": "https://classroom.google.com/" }
+    },
+    "condition": {
+      "urlFilter": "*://*.youtube.com/*",
+      "domains": ["www.youtube.com", "m.youtube.com", "youtube.googleapis.com"],
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

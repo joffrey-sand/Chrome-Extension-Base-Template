@@ -1,30 +1,19 @@
 {
-  "manifest_version": 2,
-  "name": "Your Chrome Extension Name",
-  "version": "0.1",
-  "author": "First Last",
-  "description": "A description about your Chrome Extension...",
-  "permissions": [
-    ""
-  ],
-  "content_scripts": [
-    {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "content.js"
-      ]
-    }
-  ],
+  "name": "Block YouTube",
+  "version": "1.0",
+  "manifest_version": 3,
   "background": {
-    "scripts": [
-      "background.js"
+    "service_worker": "background.js"
+  },
+  "permissions": ["declarativeNetRequest"],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
     ]
   },
-  "browser_action": {
-    "default_icon": "logo.png",
-    "default_popup": "index.html",
-    "default_title": "A tooltip popup description when you hover over the Chrome Extension icon."
-  }
+  "host_permissions": ["*://*.youtube.com/*"]
 }
